@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 930507279}
+  playerCollider: {fileID: 930507277}
 --- !u!95 &930507279 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8137671420340972775, guid: 8c5ae233ad3068a408abde9bf96922e1,
