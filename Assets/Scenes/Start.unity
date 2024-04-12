@@ -272,6 +272,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244f85b48800e35419a998096379b1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 930507279}
+--- !u!95 &930507279 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8137671420340972775, guid: 8c5ae233ad3068a408abde9bf96922e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8560507417732037472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1224473325
 GameObject:
   m_ObjectHideFlags: 0
