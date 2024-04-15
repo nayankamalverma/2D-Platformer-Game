@@ -18,20 +18,43 @@ public class PlayerController : MonoBehaviour
     private float jumpForce;
     private Vector2 playerColl_Size;//for storing initial size of collider
     private Vector2 playerColl_Offset;//for storing initial offset of collider
+    [SerializeField]
+    private Vector2 boxSize;
+    [SerializeField]
+    private float castDistamce;
+    [SerializeField]
+    private LayerMask groundLayer;
+
+    //input
+    private float verticalInput;
+    private float horizontalInput;
+    public bool grounded;
+
+    private void Awake()
+    {
+        rd = gameObject.GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         playerColl_Size = playerCollider.size;
         playerColl_Offset = playerCollider.offset;
-        rd = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float verticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         PlayerMovementAnimation(horizontalInput, verticalInput);
         PlayerMovement(horizontalInput, verticalInput);
+
+        
+
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     void PlayerMovement(float horizontalInput, float verticalInput)
@@ -41,11 +64,12 @@ public class PlayerController : MonoBehaviour
         position.x += horizontalInput * playerSpeed * Time.deltaTime;
         transform.position = position;
 
-        //vertcal movement
-        if (verticalInput > 0)
+        if (Input.GetKey(KeyCode.Space) && isGrounded())
         {
-            rd.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
+            rd.AddForce(new Vector2(rd.velocity.x, jumpForce));
         }
+
+
     }
     void PlayerMovementAnimation(float horizontalInput, float verticalInput)
     {
@@ -68,10 +92,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl)){
 
             float sizeX = 0.6048745f;       //size x
-            float sizeY = 1.49f;            //size y
+            float sizeY = 1.363909f;            //size y
 
             float offX = 0.01174039f;     //Offset X
-            float offY = 0.68f;           //Offset y
+            float offY = 0.6169545f;           //Offset y
 
             animator.SetBool("crouch", true);
             playerCollider.size = new Vector2(sizeX, sizeY);
@@ -84,12 +108,29 @@ public class PlayerController : MonoBehaviour
         }
 
         //jump
-        if (verticalInput > 0)
+        if (!isGrounded())
         {
             animator.SetBool("jump", true);
-        }else
+        }else if(isGrounded())
         {
             animator.SetBool("jump", false);
         }
+    }
+
+    
+
+    //to check player is on ground or not
+    bool isGrounded()
+    {
+        if(Physics2D.BoxCast(transform.position, boxSize, 0,-transform.up, castDistamce, groundLayer)){ 
+            grounded = true;
+            return true; }
+        grounded = false;
+        return false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position-transform.up*castDistamce, boxSize);
     }
 }
