@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player_Controller : MonoBehaviour
 {
-    //componets
-    [SerializeField]
     private Animator animator;
+    private Rigidbody2D rb;
     [SerializeField]
-    private BoxCollider2D playerCollider;
-    private Rigidbody2D rd;
+    private CapsuleCollider2D playerCollider;
 
     //data to update player
     [SerializeField]
@@ -21,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Vector2 boxSize;
     [SerializeField]
-    private float castDistamce;
+    private float castDistance;
     [SerializeField]
     private LayerMask groundLayer;
 
@@ -32,7 +30,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        rd = gameObject.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void Start()
     {
@@ -40,37 +39,25 @@ public class PlayerController : MonoBehaviour
         playerColl_Offset = playerCollider.offset;
     }
 
-    // Update is called once per frame
     void Update()
     {
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
         PlayerMovementAnimation(horizontalInput, verticalInput);
         PlayerMovement(horizontalInput, verticalInput);
-
-        
-
-    }
-
-    private void FixedUpdate()
-    {
-        
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
+            Jump();
+        }
     }
 
     void PlayerMovement(float horizontalInput, float verticalInput)
     {
-        //horizontal movement
         Vector2 position = transform.position;
         position.x += horizontalInput * playerSpeed * Time.deltaTime;
         transform.position = position;
-
-        if (Input.GetKey(KeyCode.Space) && isGrounded())
-        {
-            rd.AddForce(new Vector2(rd.velocity.x, jumpForce));
-        }
-
-
     }
+
     void PlayerMovementAnimation(float horizontalInput, float verticalInput)
     {
         //horizontal
@@ -87,9 +74,9 @@ public class PlayerController : MonoBehaviour
         }
         transform.localScale = scale;
 
-        //vertical jump and crouch
-
-        if (Input.GetKeyDown(KeyCode.LeftControl)){
+        //crouch
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
 
             float sizeX = 0.6048745f;       //size x
             float sizeY = 1.363909f;            //size y
@@ -101,36 +88,44 @@ public class PlayerController : MonoBehaviour
             playerCollider.size = new Vector2(sizeX, sizeY);
             playerCollider.offset = new Vector2(offX, offY);
 
-        }else if (Input.GetKeyUp(KeyCode.LeftControl)){
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
             animator.SetBool("crouch", false);
             playerCollider.offset = playerColl_Offset;
             playerCollider.size = playerColl_Size;
         }
 
-        //jump
-        if (!isGrounded())
+        if(!isGrounded())
         {
             animator.SetBool("jump", true);
-        }else if(isGrounded())
+        }
+        else if (isGrounded())
         {
             animator.SetBool("jump", false);
         }
     }
 
-    
-
-    //to check player is on ground or not
+    void Jump()
+    {
+        if (isGrounded())
+        {
+            //check is player is in ground and pressed space set jump power & jump
+            rb.velocity = Vector2.up * jumpForce;
+        }
+    }
     bool isGrounded()
     {
-        if(Physics2D.BoxCast(transform.position, boxSize, 0,-transform.up, castDistamce, groundLayer)){ 
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
+        {
             grounded = true;
-            return true; }
+            return true;
+        }
         grounded = false;
         return false;
     }
-
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position-transform.up*castDistamce, boxSize);
+        Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
     }
 }
