@@ -22,6 +22,8 @@ public class Player_Controller : MonoBehaviour
     private float castDistance;
     [SerializeField]
     private LayerMask groundLayer;
+    [SerializeField]
+    private ScoreController scoreController;
 
     //input
     private float verticalInput;
@@ -127,5 +129,10 @@ public class Player_Controller : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
+    }
+
+    public void PickUpKey()
+    {
+        scoreController.IncreaseScore(10);
     }
 }
