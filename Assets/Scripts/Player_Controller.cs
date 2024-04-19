@@ -135,4 +135,11 @@ public class Player_Controller : MonoBehaviour
     {
         scoreController.IncreaseScore(10);
     }
+
+    public void GotHurt()
+    {
+        Debug.Log("Player Dead");
+        animator.SetBool("isAlive", false);
+    }
+
 }
