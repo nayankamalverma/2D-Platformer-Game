@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -140,6 +141,16 @@ public class Player_Controller : MonoBehaviour
     {
         Debug.Log("Player Dead");
         animator.SetBool("isAlive", false);
+        StartCoroutine(MyCoroutine());
     }
+    IEnumerator MyCoroutine()
+    {
+        Debug.Log("Coroutine started at " + Time.time);
 
+        // Pause the execution of this coroutine for 2 seconds
+        yield return new WaitForSeconds(2);
+
+        Debug.Log("Coroutine resumed at " + Time.time);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

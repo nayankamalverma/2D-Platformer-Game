@@ -9,6 +9,7 @@ public class GameOverScript : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Player_Controller>() != null)
         {
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Debug.Log("restart level");
         }
