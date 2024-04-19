@@ -120,8 +120,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4488258384118141897, guid: 985d81c362609ea4dacbe62fd27bb22b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488258384118141897, guid: 985d81c362609ea4dacbe62fd27bb22b,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.27
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4488258384118141897, guid: 985d81c362609ea4dacbe62fd27bb22b,
         type: 3}
@@ -172,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chomper
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524957540529771251, guid: 985d81c362609ea4dacbe62fd27bb22b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 985d81c362609ea4dacbe62fd27bb22b, type: 3}

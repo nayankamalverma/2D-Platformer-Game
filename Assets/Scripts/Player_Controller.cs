@@ -26,6 +26,8 @@ public class Player_Controller : MonoBehaviour
     [SerializeField]
     private ScoreController scoreController;
 
+    private PlayerHealth playerHealth;
+
     //input
     private float verticalInput;
     private float horizontalInput;
@@ -35,6 +37,7 @@ public class Player_Controller : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        playerHealth = gameObject.GetComponent<PlayerHealth>();
     }
     void Start()
     {
@@ -139,18 +142,7 @@ public class Player_Controller : MonoBehaviour
 
     public void GotHurt()
     {
-        Debug.Log("Player Dead");
-        animator.SetBool("isAlive", false);
-        StartCoroutine(MyCoroutine());
+        playerHealth.TakeDamage(1);
     }
-    IEnumerator MyCoroutine()
-    {
-        Debug.Log("Coroutine started at " + Time.time);
-
-        // Pause the execution of this coroutine for 2 seconds
-        yield return new WaitForSeconds(2);
-
-        Debug.Log("Coroutine resumed at " + Time.time);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    
 }
