@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 930507276}
   - component: {fileID: 640723174}
   - component: {fileID: 640723175}
+  - component: {fileID: 1437079870}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -247,9 +248,22 @@ MonoBehaviour:
   playerSpeed: 6
   jumpForce: 9.5
   boxSize: {x: 0.39, y: 0.18}
-  castDistance: 0.06
+  castDistance: 0.07
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   scoreController: {fileID: 0}
   grounded: 0
+--- !u!114 &1437079870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160680148081282845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be1a85a0beea564eb6b1900f8bd4041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialHealth: 3
