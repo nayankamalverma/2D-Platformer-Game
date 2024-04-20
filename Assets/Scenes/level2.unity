@@ -1208,10 +1208,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1058173016, guid: f01731c06ad80be4490d8f13ad760d8f, type: 3}
-      propertyPath: m_text
-      value: Restart
-      objectReference: {fileID: 0}
     - target: {fileID: 5938462765897074184, guid: f01731c06ad80be4490d8f13ad760d8f,
         type: 3}
       propertyPath: playerHealth

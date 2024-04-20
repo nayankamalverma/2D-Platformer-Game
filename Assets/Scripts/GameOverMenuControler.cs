@@ -5,18 +5,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameMenuControler : MonoBehaviour
+public class GameOverMenuControler : MonoBehaviour
 {
     [SerializeField]
     private Button restartButton;
+    [SerializeField]
+    private Button mainMenuButton;
 
     private void Awake()
     {
-        restartButton.onClick.AddListener(reloadLevel);
+        restartButton.onClick.AddListener(ReloadLevel);
+        mainMenuButton.onClick.AddListener(GoLobby);
     }
 
-    private void reloadLevel()
+    private void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void GoLobby()
+    {
+        SceneManager.LoadScene(0);
     }
 }

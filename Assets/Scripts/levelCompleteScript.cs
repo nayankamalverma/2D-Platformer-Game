@@ -9,13 +9,13 @@ public class levelCompleteScript : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Player_Controller>() != null)
         {
-            if(SceneManager.GetActiveScene().buildIndex == 0) {
-                SceneManager.LoadScene("level2");
+            if(SceneManager.GetActiveScene().buildIndex == 1) {
+                SceneManager.LoadScene(2);
                 Debug.Log("level 1 complete");
             }
             else
             {
-                SceneManager.LoadScene("start");
+                SceneManager.LoadScene(0);
                 Debug.Log("level 2 complete");
             }
         }
