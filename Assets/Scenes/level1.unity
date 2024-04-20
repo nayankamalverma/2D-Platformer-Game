@@ -135,36 +135,6 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 8560507417732037473}
-    - target: {fileID: 5938462766471690987, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766471690987, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766471690987, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766471690987, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766471690987, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -394.99994
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766471690987, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 323.99997
-      objectReference: {fileID: 0}
     - target: {fileID: 5938462766556661096, guid: f01731c06ad80be4490d8f13ad760d8f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -274,36 +244,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766965048845, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766965048845, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766965048845, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766965048845, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766965048845, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -395
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938462766965048845, guid: f01731c06ad80be4490d8f13ad760d8f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 324
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01731c06ad80be4490d8f13ad760d8f, type: 3}
@@ -943,6 +883,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc83d13131e203445849b373e2159def, type: 3}
+--- !u!1 &1050541384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1591072081, guid: f01731c06ad80be4490d8f13ad760d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 329724411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1054980726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4808947647006125654, guid: a148e82fdbeee8d43afe667c403c7eb8,
@@ -1399,6 +1345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4808947647006125654, guid: a148e82fdbeee8d43afe667c403c7eb8,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.4125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808947647006125654, guid: a148e82fdbeee8d43afe667c403c7eb8,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.321026
       objectReference: {fileID: 0}
@@ -1460,6 +1411,10 @@ PrefabInstance:
       propertyPath: scoreController
       value: 
       objectReference: {fileID: 473858233}
+    - target: {fileID: 1437079870, guid: 8c5ae233ad3068a408abde9bf96922e1, type: 3}
+      propertyPath: gameOverMenu
+      value: 
+      objectReference: {fileID: 1050541384}
     - target: {fileID: 4623997266883993196, guid: 8c5ae233ad3068a408abde9bf96922e1,
         type: 3}
       propertyPath: m_RootOrder
