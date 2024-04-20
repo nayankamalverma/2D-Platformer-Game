@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public float CurrentHealth {  get; private set; }
     private Animator anim;
     private bool isAlive;
+    [SerializeField]
+    private GameObject gameOverMenu;
     private void Awake()
     {
         CurrentHealth = InitialHealth;
@@ -30,19 +33,23 @@ public class PlayerHealth : MonoBehaviour
                 anim.SetTrigger("death");
                 GetComponent<Player_Controller>().enabled = false;
                 isAlive = false;
-
-                StartCoroutine(MyCoroutine());
+                GameOverMenu();
             }
         }
     }
+    public void GameOverMenu() {
+        gameOverMenu.SetActive(true);
+    }
+    public void Reload()
+    {
+        Debug.Log("Restarting");
+        StartCoroutine(MyCoroutine());
+    }
     IEnumerator MyCoroutine()
     {
-        Debug.Log("Coroutine started at " + Time.time);
-
         // Pause the execution of this coroutine for 2 seconds
         yield return new WaitForSeconds(3);
-
-        Debug.Log("Coroutine resumed at " + Time.time);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
