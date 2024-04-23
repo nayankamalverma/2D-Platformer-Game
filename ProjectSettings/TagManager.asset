@@ -13,9 +13,9 @@ TagManager:
   - UI
   - platform
   - player
-  - enemy
   - 
-  - 
+  - background
+  - foreground
   - 
   - 
   - 
@@ -41,12 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: platform
+  - name: background
     uniqueID: 3683735699
     locked: 0
-  - name: enemy
+  - name: platform
     uniqueID: 450491429
     locked: 0
   - name: player
     uniqueID: 382228051
+    locked: 0
+  - name: foreground
+    uniqueID: 2022683845
     locked: 0
