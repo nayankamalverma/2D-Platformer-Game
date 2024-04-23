@@ -198,6 +198,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 108119242}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &117375829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 117375829, guid: f01731c06ad80be4490d8f13ad760d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 329724411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &329724411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8214,18 +8220,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710613608786168563, guid: 371a0a1565c05934b90b149328c4ddaf,
         type: 3}
-      propertyPath: message
+      propertyPath: levelComplete
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 117375829}
     - target: {fileID: 710613608786168572, guid: 371a0a1565c05934b90b149328c4ddaf,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 710613608786168572, guid: 371a0a1565c05934b90b149328c4ddaf,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.60710007
       objectReference: {fileID: 0}
     - target: {fileID: 710613608786168572, guid: 371a0a1565c05934b90b149328c4ddaf,
         type: 3}
