@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
+    private static ScoreController instance;
+    public static ScoreController Instance {  get { return instance; } }
     private TextMeshProUGUI ScoreText;
     private int score=0;
 
@@ -25,5 +27,9 @@ public class ScoreController : MonoBehaviour
     private void UpdateScoreText()
     {
         ScoreText.text = "Score : "+ score;
+    }
+    public int GetScore()
+    {
+        return score;
     }
 }
