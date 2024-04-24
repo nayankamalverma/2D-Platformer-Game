@@ -7,17 +7,28 @@ public class LevelLoader : MonoBehaviour
 {
     private Button btn;
     [SerializeField]
+    private GameObject lockImage;
+    [SerializeField]
     private string levelName;
-
+    private LevelStatus levelStatus;
     private void Awake()
     {
+        levelStatus = LevelManager.Instance.GetLevelStatus(levelName);
         btn = GetComponent<Button>();
         btn.onClick.AddListener(LoadLevel);
+        if (levelStatus == LevelStatus.Locked)
+        {
+            lockImage.SetActive(true);
+        }
+        else
+        {
+            lockImage.SetActive(false);
+        }
     }
 
     private void LoadLevel()
     {
-        LevelStatus levelStatus = LevelManager.Instance.GetLevelStatus(levelName);
+        
         switch (levelStatus)
         {
             case LevelStatus.Locked:
