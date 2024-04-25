@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth - dmg, 0, InitialHealth);
         if(CurrentHealth > 0) {
+            SoundManger.Instance.Play(Sounds.PlayerHurt);
             anim.SetTrigger("hurt");
         }
         else
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     public void GameOverMenu() {
+        SoundManger.Instance.Play(Sounds.PlayerDeath);
         gameOverMenu.SetActive(true);
     }
     public void Reload()

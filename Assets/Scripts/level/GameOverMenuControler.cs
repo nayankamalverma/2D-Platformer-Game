@@ -20,11 +20,13 @@ public class GameOverMenuControler : MonoBehaviour
 
     private void ReloadLevel()
     {
+        SoundManger.Instance.Play(Sounds.StartGame);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void GoLobby()
     {
+        SoundManger.Instance.Play(Sounds.ButtonClick);
         SceneManager.LoadScene(0);
     }
 }
