@@ -28,18 +28,22 @@ public class LobbyController : MonoBehaviour
     }
     void StartGame()
     {
+        SoundManger.Instance.Play(Sounds.StartGame);
         SceneManager.LoadScene(1);
     }
     void ActivateLevelSelector()
     {
+        SoundManger.Instance.Play(Sounds.ButtonClick);
         levelSelector.SetActive(true);
     }
     void DectivateLevelSelector()
     {
+        SoundManger.Instance.Play(Sounds.ButtonClick);
         levelSelector.SetActive(false);
     }
     void ExitGame()
     {
+        SoundManger.Instance.Play(Sounds.ButtonClick);
         Debug.Log("Game closed");
         Application.Quit();
     }
