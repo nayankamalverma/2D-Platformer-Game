@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
+    [SerializeField]
+    private Animator anim;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Player_Controller>() != null)
         {
-            collision.gameObject.GetComponent<Animator>().SetTrigger("death");
-            Debug.Log("animation deth");
+            anim.SetTrigger("death");
             collision.gameObject.GetComponent<Player_Controller>().enabled = false;
             collision.gameObject.GetComponent<PlayerHealth>().GameOverMenu();
         }

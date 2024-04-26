@@ -82,7 +82,9 @@ public enum Sounds
     Music,
     StartGame,
     JumpTakeOff,
-    jumpLand,
+    JumpLand,
+    LevelComplete,
+    KeyCollected,
     //run sound 
     run1,
     run2

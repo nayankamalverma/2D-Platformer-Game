@@ -11,8 +11,10 @@ public class levelCompleteScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.GetComponent<Player_Controller>() != null )
         {
+            SoundManger.Instance.Play(Sounds.LevelComplete);
             levelComplete.SetActive(true);
             collision.gameObject.GetComponent<Player_Controller>().enabled = false;
             int index= SceneManager.GetActiveScene().buildIndex;

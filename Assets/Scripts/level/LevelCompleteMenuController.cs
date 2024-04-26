@@ -11,11 +11,17 @@ public class LevelCompleteMenuController : MonoBehaviour
     private Button next;
     private void Awake()
     {
-        next.onClick.AddListener(LoadNextScene);
+        
+        if(next.name == "Menu") next.onClick.AddListener(LoadLobby);
+        else next.onClick.AddListener(LoadNextScene);
     }
     void LoadNextScene()
     {
         int index = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(index);
+    }
+    void LoadLobby()
+    {
+        SceneManager.LoadScene(0);
     }
 }

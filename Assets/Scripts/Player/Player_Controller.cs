@@ -162,7 +162,7 @@ public class Player_Controller : MonoBehaviour
     }
     public void JumpLandSound()
     {
-        SoundManger.Instance.Play(Sounds.jumpLand);
+        SoundManger.Instance.Play(Sounds.JumpLand);
     }
 
     #endregion
