@@ -8,8 +8,6 @@ public class SoundManger : MonoBehaviour
     private static SoundManger instance;
     public static SoundManger Instance { get { return instance; } }
 
-    
-    
     [SerializeField]
     private AudioSource Music;
     [SerializeField]
@@ -42,7 +40,7 @@ public class SoundManger : MonoBehaviour
             Music.Play();
         }
     }
-
+        
     public void Play(Sounds sound)
     {
         AudioClip clip = getSoundClip(sound);
@@ -82,5 +80,10 @@ public enum Sounds
     PlayerDeath,
     PlayerHurt,
     Music,
-    StartGame
+    StartGame,
+    JumpTakeOff,
+    jumpLand,
+    //run sound 
+    run1,
+    run2
 }

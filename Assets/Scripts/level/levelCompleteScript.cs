@@ -14,11 +14,9 @@ public class levelCompleteScript : MonoBehaviour
         if (collision.gameObject.GetComponent<Player_Controller>() != null )
         {
             levelComplete.SetActive(true);
+            collision.gameObject.GetComponent<Player_Controller>().enabled = false;
             int index= SceneManager.GetActiveScene().buildIndex;
             LevelManager.Instance.UpdateLevels(index++);
- //           Debug.Log("level" + index + " " + LevelManager.Instance.GetLevelStatus("level" + index++));
- //           Debug.Log("level" + index + " "+ LevelManager.Instance.GetLevelStatus("level" + index));
-  //          SceneManager.LoadScene(index);
         }
     }
 }

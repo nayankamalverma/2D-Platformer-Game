@@ -144,5 +144,27 @@ public class Player_Controller : MonoBehaviour
     {
         playerHealth.TakeDamage(1);
     }
+
+    #region Sounds
     
+    public void PlayRunSound1()
+    {
+        SoundManger.Instance.Play(Sounds.run1);
+    }
+    public void PlayRunSound2()
+    {
+        SoundManger.Instance.Play(Sounds.run2);
+    }
+
+    public void JumpTakeOffSound()
+    {
+        SoundManger.Instance.Play(Sounds.JumpTakeOff);
+    }
+    public void JumpLandSound()
+    {
+        SoundManger.Instance.Play(Sounds.jumpLand);
+    }
+
+    #endregion
+
 }
