@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f93b084e19aed47a74e27f0c3492ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1480495566}
 --- !u!61 &191033477
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -615,6 +616,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 420246703}
     m_Modifications:
+    - target: {fileID: 6806182385086272138, guid: 44719f90f9943a846acad80a15db3833,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.66
+      objectReference: {fileID: 0}
     - target: {fileID: 7247363806085060844, guid: 44719f90f9943a846acad80a15db3833,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -11374,12 +11380,12 @@ PrefabInstance:
     - target: {fileID: 4623997266883993196, guid: 8c5ae233ad3068a408abde9bf96922e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.94
+      value: -15.47
       objectReference: {fileID: 0}
     - target: {fileID: 4623997266883993196, guid: 8c5ae233ad3068a408abde9bf96922e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: 4623997266883993196, guid: 8c5ae233ad3068a408abde9bf96922e1,
         type: 3}
@@ -11428,6 +11434,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5ae233ad3068a408abde9bf96922e1, type: 3}
+--- !u!95 &1480495566 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8137671420340972775, guid: 8c5ae233ad3068a408abde9bf96922e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1480495565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1575090263
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ public class LevelManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            PlayerPrefs.DeleteAll();
             DontDestroyOnLoad(gameObject);
         }
         else
